@@ -18,8 +18,12 @@ omnibox.addEventListener('keydown', (e) => {
     }
   }
 });
-
-
+let searchEngines=document.getElementsByClassName("search-engine");
+for(let i=0;i<searchEngines.length;i++) {
+  searchEngines[i].addEventListener("click", function() {
+    searchEngine(searchEngines[i].title);
+  });
+}
 click('newtab-button', () => {
   createTab();
 });
